@@ -1,4 +1,6 @@
-var app = require('./helper/app');
+var app = require('../index')(app);
+// var company = require('../data');
+// var app = require('./helper/app');
 var should = require('should');
 var supertest = require('supertest');
 
