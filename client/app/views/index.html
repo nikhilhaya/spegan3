@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html ng-app="MyApp">
+
+	<head>
+
+		<base href='/'>
+
+		<title> CDS Login </title>
+    	<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="app/stylesheets/css/style.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body ng-controller="MainController as main">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-route.min.js"></script>
+
+		<!-- Bower Scripts --><!--
+		<script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="../../../bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
+		
+		<script type="text/javascript" src="app/services/authService.js"></script>
+		<script type="text/javascript" src="app/services/userService.js"></script>
+		<script type="text/javascript" src="app/services/companyService.js"></script>
+
+		<script type="text/javascript" src="app/controllers/mainController.js"></script>
+		<script type="text/javascript" src="app/controllers/userController.js"></script>
+		<script type="text/javascript" src="app/controllers/companyController.js"></script>
+
+		<script type="text/javascript" src="app/app.routes.js"></script>
+		<script type="text/javascript" src="app/app.js"></script>
+
+	<div id="main-wrapper">
+		
+		<header class="top">
+			<div class="logo">
+				<h3><a href="/home" title="logo">Club Demonstration Services</a></h3>
+			</div>
+			<div class="search">
+				<input type="text" placeholder="search website..." id="searchbar" class="searchbar">
+			</div>
+			<div class="newtop dropdown">
+				<button type="button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create New &nbsp;&nbsp;&nbsp;
+				<span class="caret"></span>
+				</button>
+    				<ul class="dropdown-menu">
+      					<li><a href="#">Customer Request</a></li>
+      					<li><a href="/companycreate">Vendors</a></li>
+      					<li><a href="#">Items</a></li>
+      					<li><a href="#">Contacts</a></li>
+      					<li><a href="#">Resources</a></li>
+      					<li><a href="#">Services</a></li>
+
+    				</ul>
+    		</div>
+
+    		<div class="changeLoginLogout">
+    			<ul class="nav navbar-nav navbar-right">
+    				<li ng-if="main.loggedIn"><a href="/"><i class="material-icons">query_builder</i></a></li>
+    				<li ng-if="main.loggedIn"><a href="/"><i class="material-icons">chat_bubble_outline</i></a></li>
+    				<li ng-if="main.loggedIn"><a href="/"><i class="material-icons">stay_current_portrait</i></a></li>
+					<li ng-if="!main.loggedIn"><a href="/">Login</a></li>
+					<li ng-if="!main.loggedIn"><a href="/signup">Sign Up</a></li>
+					<li ng-if="main.loggedIn"><a href="#">Hello {{main.user.username}}</a></li>
+					<li><a href="#">Change Password</a></li>
+					<li ng-if="main.loggedIn"><a href="#" ng-click="main.doLogout()">Logout</a></li>
+				</ul>
+    		</div>
+		</header>
+		
+
+	<div class="middle">
+
+		<section id="main-content" class="mainContent">
+			<main class="container-fluid">
+				<div ng-view>
+					{{2+2}}
+				</div>
+			</main>
+		</section>
+
+		<aside>
+			<div class="nav navbar-nav navbar-side">
+				<ul> 
+				  <li><i class="material-icons">dashboard</i>&nbsp;&nbsp;&nbsp;<a href="#">Dashboard</a></li> 
+				  <li><i class="material-icons">restore</i>&nbsp;&nbsp;&nbsp;<a href="#">Scheduling</a></li>
+				  <li><i class="material-icons">receipt</i>&nbsp;&nbsp;&nbsp;<a href="#">Customer Request</a></li>
+				  <li><i class="material-icons">work</i><a href=""><a href="#">Vendors</a>
+				      <ul> 
+				      <li><i class="material-icons">search</i>&nbsp;&nbsp;&nbsp;<a href="#">Search Vendor</a></li> 
+				      <li><i class="material-icons">note_add</i>&nbsp;&nbsp;&nbsp;<a href="/companycreate">Add Vendor</a></li> 
+				      <li><i class="material-icons">mode_edit</i>&nbsp;&nbsp;&nbsp;<a href="#">Update Vendor</a></li>
+				      <li><i class="material-icons">delete</i>&nbsp;&nbsp;&nbsp;<a href="#">Delete Vendor</a></li>  
+				      </ul> 
+				    </li> 
+				  <li><i class="material-icons">assignment</i>&nbsp;&nbsp;&nbsp;<a href="#">Items</a> </li>
+				  <li><i class="material-icons">contacts</i>&nbsp;&nbsp;&nbsp;<a href="#">Contacts</a></li>
+				  <li><i class="material-icons">group_work</i>&nbsp;&nbsp;&nbsp;<a href="#">Assets</a></li>
+				  <li><i class="material-icons">supervisor_account</i>&nbsp;&nbsp;&nbsp;<a href="#">Resources</a></li>
+				  <li><i class="material-icons">language</i>&nbsp;&nbsp;&nbsp;<a href="#">Location</a></li>
+				  <li><i class="material-icons">business</i>&nbsp;&nbsp;&nbsp;<a href="#">Services</a></li> 
+				</ul>
+			</div>
+		</aside>
+
+	</div>
+
+
+		<footer>
+			<section class="about">
+			    <p class="about-links">
+			    </p>
+			    <p class="about-author">
+			       &copy; 2016&ndash;2017 Daymon CDS<br>
+			       DI Global Tech Support - (800) 573-8861 <a href="#" target="_blank"></a>
+				</p>
+			</section>
+		</footer>
+
+	</div>
+
+
+
+
+</body>
+</html>
