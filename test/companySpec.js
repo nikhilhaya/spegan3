@@ -35,4 +35,14 @@ describe('company', function(){
 			})
 	});
 
+	it('TEST 9 >>DUMMY TEST Should Not Return Any Company with PostGreSQL ID=xyz \n', function(done){
+		supertest(app)
+			.get('/api/companydetail/xyz')
+			.expect(404)
+			.end(function(err, res){
+				res.status.should.equal(404);
+				done();
+			})
+	});
+
 });
