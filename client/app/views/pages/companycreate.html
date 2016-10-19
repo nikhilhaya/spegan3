@@ -12,190 +12,255 @@
 
 <!-- <div class="container"> -->
 	<!-- <div class="login-page"> -->
-	  <div class="form">
+
+	<div class="panel panel-default">
+		<div class="panel-heading"><h1 class="panel-title ">Create New Vendor</h1></div>
+	</div>
+
+	<div class="form">
 	    <form class="login-form form-signin login" method="post" ng-submit="company.createCompany()">
 	    
-	    <div class="row">
-<!--             <div class="col-xs-12 customDiv">
-                Company Information
-            </div> -->
-            <label for="login">Company Information</label>
-        </div>
-                <br />        
-        <div class="row">
-             
-             <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-             </div>
+		    <div class="row cheading">
+	            <label for="login">Vendor Information</label>
+	        </div>
 
-        
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Compnay Name:</label>
-              </div>
+	        <br /> 
 
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="Compnay Name" type="text" name="name" ng-model="company.companyData.name"> -->
-                <input type="text" name="name" ng-model="company.companyData.name" placeholder="name"/>
-            </div>
+	        <div class="row vcenter">
+	             
+	             <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	             </div>
 
+	        
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label">Vendor Name:</label>
+	              </div>
 
-             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                 <label for="inputEmail" class="control-label">Company Abrev:</label>
-             </div>
-
-             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                 <!-- <input class="form-control" id="inputCompany" placeholder="Company Abrev" name="abrev" ng-model="company.companyData.abrev"> -->
-                 <input type="text" name="abrev" ng-model="company.companyData.abrev" placeholder="abrev"/>
-             </div>
-
-             <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-             </div>
-
-        </div>
-
-        <br />
-        <div class="row">
-
-            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	                <!-- <input class="form-control" id="inputCompany" placeholder="Compnay Name" type="text" name="name" ng-model="company.companyData.name"> -->
+	                <input type="text" name="name" ng-model="company.companyData.name" placeholder="Name"/>
+	            </div>
 
 
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Weekend Max:</label>
-            </div>
+	             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                 <label for="inputEmail" class="control-label">Vendor Abbreviation:</label>
+	             </div>
 
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="Weekend Max" name="weekendmax" ng-model="company.companyData.weekendmax"> -->
-                <input type="text" name="weekendmax" ng-model="company.companyData.weekendmax" placeholder="weekendmax"/>
-            </div>
+	             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	                 <!-- <input class="form-control" id="inputCompany" placeholder="Company Abrev" name="abrev" ng-model="company.companyData.abrev"> -->
+	                 <input type="text" name="abrev" ng-model="company.companyData.abrev" placeholder="Abrev"/>
+	             </div>
+
+	             <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	             </div>
+
+	        </div>
+
+	        <br />
+	        <div class="row vcenter">
+
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
 
 
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Terms:</label>
-            </div>
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label">Weekend Max:</label>
+	            </div>
 
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="Terms" name="terms" ng-model="company.companyData.terms"> -->
-                <input type="text" name="terms" ng-model="company.companyData.terms" placeholder="terms"/>
-            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	                <!-- <input class="form-control" id="inputCompany" placeholder="Weekend Max" name="weekendmax" ng-model="company.companyData.weekendmax"> -->
+	                <input type="text" name="weekendmax" ng-model="company.companyData.weekendmax" placeholder="Max Weekend"/>
+	            </div>
 
-            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-            </div>
 
-        </div>
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label">Terms:</label>
+	            </div>
 
-        <br />
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	                <!-- <input class="form-control" id="inputCompany" placeholder="Terms" name="terms" ng-model="company.companyData.terms"> -->
+	                <input type="text" name="terms" ng-model="company.companyData.terms" placeholder="Terms"/>
+	            </div>
+
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
+
+	        </div>
+
+	        <br />
+	   
+	        <div class="row vcenter">
+
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
+
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+	                <label for="inputEmail" class="control-label">Vendor URL:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+	                <input type="text" name="url" ng-model="company.companyData.url" placeholder="URL"/>
+	            </div>
+
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label ">Vendor Store Name:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+	                <input type="text" name="store" ng-model="company.companyData.store" placeholder="Store"/>
+	            </div>
+
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
+
+	        </div>
+
+	        <br />
+	   
+	        <div class="row vcenter">
+
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
+
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+	                <label for="inputEmail" class="control-label">Address:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+	                <input type="text" name="" ng-model="" placeholder="Address"/>
+	            </div>
+
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label ">Credit Information:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+	                <input type="text" name="" ng-model="" placeholder="Credit Info"/>
+	            </div>
+
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
+
+	        </div>
+
+	        <br />
    
-        <div class="row">
+	        <div class="row vcenter">
 
-            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-            </div>
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
 
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 ">
+	                <label for="inputEmail" class="control-label">Contract Start Date:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+	                <input type="text" name="" ng-model="" placeholder="Start Date"/>
+	            </div>
 
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Company URL:</label>
-            </div>
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label ">Contract End Date:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 ">
+	                <input type="text" name="" ng-model="" placeholder="End Date"/>
+	            </div>
 
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="URL" name="url" ng-model="company.companyData.url"> -->
-                <input type="text" name="url" ng-model="company.companyData.url" placeholder="url"/>
-            </div>
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
 
-
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Company Store Name:</label>
-            </div>
-
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="Store Name" name="store" ng-model="company.companyData.store"> -->
-                <input type="text" name="store" ng-model="company.companyData.store" placeholder="store"/>
-            </div>
-
-            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-            </div>
-
-
-
-        </div>
+	        </div>
 
         <br />
     
-    <div class="row">
-<!--         <div class="col-xs-12 customDiv">
-            Support Contact Information
-        </div> -->
-        <label for="login">Support Company Information</label>
-    </div>
-        <br />
+		    <div class="row cheading ">
+	            <label for="login">Support Company Information</label>
+	        </div>
+	        <br />
+	        <div class="row vcenter">
 
-        <div class="row">
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
 
-            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-            </div>
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label">Display Name:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	                <input type="text" name="store" placeholder="Display Name"/>
+	            </div>
 
+	            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+	                <label for="inputEmail" class="control-label">Email Address:</label>
+	            </div>
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+	                <input type="text" name="store" placeholder="Email"/>
+	            </div>
 
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Display Name:</label>
-            </div>
+	            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
+	            </div>
 
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="Display Name" type="email"> -->
-                <input type="text" name="store" ng-model="company.companyData.store" placeholder="Display Name"/>
-            </div>
-
-
-            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <label for="inputEmail" class="control-label">Email Address:</label>
-            </div>
-
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                <!-- <input class="form-control" id="inputCompany" placeholder="Email" type="email"> -->
-                <input type="text" name="store" ng-model="company.companyData.store" placeholder="Email"/>
-            </div>
-
-            <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
-            </div>
-
-
-
-        </div>
-
-
+	        </div>
 
         <br />
 
-        <div class="row">
-<!--             <div class="col-xs-12 customDiv">
-                Week End Days
-            </div> -->
-            <label for="login">Week End Days</label>
-        </div>
-        <!-- <br /> -->
+		    <div class="row cheading">
+	            <label for="login">Weekend Days</label>
+	        </div>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
-            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 days">
-                <label class="control-label"><input type="checkbox" value="">Mon</label>
-                <label class="control-label"><input type="checkbox" value="">Tue</label>
-                <label class="control-label"><input type="checkbox" value="">Wed</label>
-                <label class="control-label"><input type="checkbox" value="">Thu</label>
-                <label class="control-label"><input type="checkbox" value="">Fri</label>
-                <label class="control-label"><input type="checkbox" value="">Sat</label>
-                <label class="control-label"><input type="checkbox" value="">Sun</label>
-            </div>
-        </div>
+	        <div class="row ">
+	            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+	            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 days">
+	                <label class="control-label"><input type="checkbox" value="">Mon</label>
+	                <label class="control-label"><input type="checkbox" value="">Tue</label>
+	                <label class="control-label"><input type="checkbox" value="">Wed</label>
+	                <label class="control-label"><input type="checkbox" value="">Thu</label>
+	                <label class="control-label"><input type="checkbox" value="">Fri</label>
+	                <label class="control-label"><input type="checkbox" value="">Sat</label>
+	                <label class="control-label"><input type="checkbox" value="">Sun</label>
+	            </div>
+	        </div>
 
-        <br /><br >
+        <br />
+    		
+		    <div class="row cheading ">
+	            <label for="login">Business Units</label>
+	        </div>
+	        <br />
+	            Share this with other Business Units.
+	        <div class="otherbusiness">
+		        <table class="table table-hover ccreate">
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td> Business Unit - 1 </a><input type="checkbox" value=""></td>
+						</tr>
+						<tr>
+							<td> Business Unit - 2 </a><input type="checkbox" value=""></td>
+						</tr>
+					</tbody>
+				</table>
+	        </div>
 
+	    <br />
+    	
+		    <div class="row cheading ">
+	            <label for="login">Documents/ Attachments</label>
+	        </div>
+	        <br />
+	        <div class="attachment">
+	            Currently there are no attachments. Please add
+	           	<button type="submit" class="btn btn-success">Browse</button>
+		      	<button type="submit" class="btn btn-success">Attach</button><br /><br>
+		      	Share email to GS to activate rights to Vendor Portal
+	        </div>
 
+	    <br /><br >
 
-	      	<button type="submit" class="btn btn-success">Save</button>
-	      	<button type="reset" class="btn btn-danger">Reset</button>
-	      	<!-- <p>Remember me<input type="checkbox"></p> -->
-	      <p class="message">Having issues saving form? <a href="#">See Help</a></p>
+	        <div class="buttons">
+		      	<button type="submit" class="btn btn-success">Save</button>
+		      	<button type="reset" class="btn btn-danger">Reset</button>
+		      	<!-- <p>Remember me<input type="checkbox"></p> -->
+		      	<p class="message">Having issues saving form? <a href="#">See Help</a></p>
+
+		    </div>
+
 	    </form>
-	  </div>
 	</div>
-</div>
 						<style>
 							@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
@@ -208,10 +273,10 @@
 							  position: relative;
 							  z-index: 0;
 							  background: #e6e6e6;
-							  max-width: 100%;
+							  /*max-width: 100%;*/
 							  margin: 0 auto 20px;
 							  padding: 15px;
-							  text-align: center;
+							  /*text-align: center;*/
 							  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 20px 20px 0 rgba(0, 0, 0, 0.24);
 							}
 							.form input {
@@ -221,26 +286,44 @@
 							  width: 100%;
 							  border: 0;
 							  margin: 0 0 15px;
-							  padding: 15px;
+							  padding: 10px;
 							  box-sizing: border-box;
 							  font-size: 14px;
+							}
+							.vcenter{
+								display: flex;
+    							align-items: center;
 							}
 							.form button {
 							  font-family: "Roboto", sans-serif;
 							  text-transform: uppercase;
 							  outline: 0;
-							  background: #999999;
-							  width: 20%;
+							  background: #111730;
+							  width: 10%;
+							  height: 1%;
 							  border: 0;
-							  padding: 15px;
+							  /*padding: 15px;*/
 							  color: #FFFFFF;
 							  font-size: 14px;
 							  -webkit-transition: all 0.3 ease;
 							  transition: all 0.3 ease;
 							  cursor: pointer;
+							  margin-left: 1%;
+							}
+							.buttons{
+								text-align: center;
 							}
 							.form button:hover,.form button:active,.form button:focus {
-							  background: #404040;
+							  background: #3bc696;
+							}
+							.attachment .btn{
+								float: right;
+								background : #f2f2f2;
+								border: 1px solid #a6a6a6;
+								width: 7%;
+								color: black;
+								text-transform: none;
+								margin-left: 1%;
 							}
 							.form .message {
 							  margin: 15px 0 0;
@@ -255,11 +338,25 @@
 							  display: none;
 							}
 							.days{
-								margin-left: 13%;
+								/*margin-left: 13%;*/
+								margin-top: 1%
 							}
 							.days label{
 								padding-left: 3%;
 								padding-right: 3%
+							}
+							.cheading {
+								background-color: #cccccc;
+								margin-left: auto; margin-right: auto;
+								padding: 8px;
+								text-align: center;
+							}
+							.row .text{
+								text-align: left;
+								padding-left: auto;
+							}
+							.ccreate input{
+								float: right;
 							}
 							/*.container {
 							  position: relative;

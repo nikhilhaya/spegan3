@@ -38,8 +38,8 @@ module.exports = function(app, express) {
 		      .then(function (newUser) {
 		        res.status(200).json({
 		        	newUser,
-		        	success:true,
-		        	token:token });
+		        	success: true,
+		        	token: token });
 		      })
 		      .catch(function (error){
 		        res.status(500).json(error);
@@ -80,39 +80,38 @@ module.exports = function(app, express) {
 	});
 
     api.post('/login', function(req, res){
-			User.find({
-				where: { username: req.body.username }})
-				.then(function(user){
-					if (!user){
-						res.json({ message: "Username doesn't exist"}); }
-						// return done(null, false, { message: 'Username doesnt exist'});	}
+		User.find({
+			where: { username: req.body.username }})
+			.then(function(user){
+				if (!user){
+					res.status(404)
+					   .json({ message: "Username doesn't exist"}); }
+					// return done(null, false, { message: 'Username doesnt exist'});	}
+				else{
+					if(req.body.password == user.password){
+						if(user.isadmin == true){ 
+							var token = createToken(user);
+							res.json({
+								isadmin: true,
+								success: true,
+								message: "successful login admin",
+								token: token
+							})}
+						else {
+							var token = createToken(user);
+							res.json({
+								isadmin: false,
+								success: true,
+								message: "successful login user",
+								token: token
+							})
+						}
+					}
 					else{
-						User.find({
-						where: { username: req.body.username, password: req.body.password }})
-						.then(function(user){
-							if(!user){
-								res.json({ message: "Password doesn't match the username" }); }
-							if(user.isadmin == true){ 
-								var token = createToken(user);
-								res.json({
-									isadmin: true,
-									success: true,
-									message: "successful login admin",
-									token: token
-								})}
-							else {
-								var token = createToken(user);
-								res.json({
-									isadmin: false,
-									success: true,
-									message: "successful login user",
-									token: token
-								})
-							}
-						})
-					};
+						res.status(404).json({ message: "Password doesn't match the username" });
+					}
+				}
 			});
-
 	});
 
     passport.use(new LocalStrategy(
@@ -174,6 +173,41 @@ module.exports = function(app, express) {
 	api.get('/me', function(req, res){
 		res.json(req.decode);
 	});
+
+	//    api.post('/login', function(req, res){
+	// 		User.find({
+	// 			where: { username: req.body.username }})
+	// 			.then(function(user){
+	// 				if (!user){
+	// 					res.json({ message: "Username doesn't exist"}); }
+	// 					// return done(null, false, { message: 'Username doesnt exist'});	}
+	// 				else{
+	// 					User.find({
+	// 					where: { username: req.body.username, password: req.body.password }})
+	// 					.then(function(user){
+	// 						if(!user){
+	// 							res.json({ message: "Password doesn't match the username" }); }
+	// 						if(user.isadmin == true){ 
+	// 							var token = createToken(user);
+	// 							res.json({
+	// 								isadmin: true,
+	// 								success: true,
+	// 								message: "successful login admin",
+	// 								token: token
+	// 							})}
+	// 						else {
+	// 							var token = createToken(user);
+	// 							res.json({
+	// 								isadmin: false,
+	// 								success: true,
+	// 								message: "successful login user",
+	// 								token: token
+	// 							})
+	// 						}
+	// 					})
+	// 				};
+	// 		});
+	// });
 
 
 return api;

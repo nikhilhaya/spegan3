@@ -23,13 +23,16 @@ module.exports = function(app, express) {
 	 api.get('/companydetail/:id', function(req, res){
 	    Company.findById(req.params.id)
 		    .then(function (company) {
-		        res.status(200).json({
-		        	company,
-		        	success:true,
-		      	});
+		        if(company){
+		        	res.status(200).json({ company, message: "company found", success:true });
+		        }else{
+		        	res.status(404).json({ message: "No company found", success:false });
+		        }
 		    })
 		    .catch(function (error){
-		        res.status(404).json(error);
+		        res.status(404).json({
+		        	error,
+		        	success: false});
 		    });
 	});
 	

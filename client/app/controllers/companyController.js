@@ -15,7 +15,7 @@ angular.module('companyController', ['companyService'])
 					$location.path('/companydetail/'+vm.id);
 				});
 
-		}
+		};
 	})
 
 	.controller('CompanyDetailController', function(Company, $scope, $routeParams, $http, $location){	
@@ -38,14 +38,13 @@ angular.module('companyController', ['companyService'])
 				};
 	})
 
-	.controller('CompanyController', function(Company, $location){
+	.controller('CompanyAllController', function(Company, $location){
 		vm = this;
 		vm.getAllCompanies = function(){
 			vm.message = '';
-			Company.getAllCompanies()
+			Company.allCompany()
 				.success(function(data){
 					vm.companies = data;
 				});
-			}
-	})
-
+			};
+	});

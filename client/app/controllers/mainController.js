@@ -12,6 +12,7 @@ angular.module('mainController', ['authService'])
 			.then(function(data){
 				vm.user = data.data;
 			});
+		if(!vm.loggedIn){$location.path('/login');}
 	});
 
 	vm.doLogin = function(){
@@ -29,7 +30,7 @@ angular.module('mainController', ['authService'])
 
 			if(data.success){
 				if(data.isadmin)
-					$location.path('/home');
+					$location.path('/');
 				else
 					$location.path('/homeuser');
 			}
@@ -41,6 +42,6 @@ angular.module('mainController', ['authService'])
 
 	vm.doLogout = function(){
 		Auth.logout();
-		$location.path('/');
+		$location.path('/login');
 	};
 });

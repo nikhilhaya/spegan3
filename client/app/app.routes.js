@@ -3,7 +3,7 @@ angular.module('appRoutes', ['ngRoute'])
 .config(function($routeProvider, $locationProvider){
 
 	$routeProvider
-		.when('/home', {
+		.when('/', {
 			templateUrl: 'app/views/pages/home.html',
 			controller: 'MainController',
 			controllerAs: 'main'
@@ -13,7 +13,7 @@ angular.module('appRoutes', ['ngRoute'])
 			controller: 'MainController',
 			controllerAs: 'main'
 		})
-		.when('/', {
+		.when('/login', {
 			templateUrl: 'app/views/pages/login.html',
 			controller: 'MainController',
 			controllerAs: 'login'
@@ -31,15 +31,23 @@ angular.module('appRoutes', ['ngRoute'])
 			controller: 'CompanyCreateController',
 			controllerAs: 'company'
 		})
-		.when('/companyall',{
-			templateUrl: 'app/views/pages/companyall.html',
+		.when('/companyhome',{
+			templateUrl: 'app/views/pages/companyhome.html',
 			controller: 'CompanyAllController',
 			controllerAs: 'company',
+			// resolve: {
+			// 	companies: function(company){
+			// 		return company.allCompanies();
+			// 	}
+			// }
 			resolve: {
-				companies: function(company){
-					return company.allCompanies();
-				}
-			}
+			      // I will cause a 1 second delay
+			      delay: function($q, $timeout) {
+			        var delay = $q.defer();
+			        $timeout(delay.resolve, 500);
+			        return delay.promise;
+			      }
+			  }
 		})
 		.when('/companydetail/:id', {
 			templateUrl: 'app/views/pages/companydetail.html',
@@ -53,10 +61,6 @@ angular.module('appRoutes', ['ngRoute'])
 			        return delay.promise;
 			      }
 			  }
-		})
-		.when('/companyhome', {
-			templateUrl: 'app/views/pages/companyhome.html',
-			// controller: ''
 		})
 		.otherwise({
 			// templateUrl: 'app/views/pages/404.html'

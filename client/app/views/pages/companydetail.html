@@ -1,17 +1,8 @@
 <div ng-controller="CompanyDetailController as company">
 
-<div class="options">
-  <div id="options-buttons">
-    <button type="button" class="btn btn-primary back" id="back" class="back" href='/companyhome' title="back">Go Back</a>
-    <button type="button" class="btn btn-default edit" id="edit" class="edit" href="#" title="edit">Edit Form</a>
-    <button type="button" class="btn btn-default delete" id="delete" class="delete" href="#" title="delete">Delete</a>
-  </div>
-</div>
-
-
 <div class="panel panel-default" ng-init="company.detailCompany()">
 	<div class="panel-heading">
-		<h3 class="panel-title">Preview Details: {{company.company.name}}</h3>
+		<h3 class="panel-title">Preview Details</h3>
 	</div>
 	<div class="panel-body">
 		<div class="row">
@@ -19,7 +10,7 @@
 				<img src="{{company.company.imageurl}}" />
 			</div>
 			<div class="col-md-8">
-				<p>{{company.company.name}}</p>
+				<p><strong>Business Unit: {{company.company.name}}</strong></p>
 				<ul class="list-group">
 					<li class="list-group-item">Name: {{company.company.name}}</li>
 					<li class="list-group-item">Abrev: {{company.company.abrev}}</li>
@@ -34,7 +25,13 @@
 </div>
 </div>
 
-
+<div class="options">
+  <div id="options-buttons">
+    <!-- <button type="button" class="btn btn-primary back" href="/companyhome">Go Back</a> -->
+    <button type="button" class="btn btn-default edit" href="#" title="edit">Edit Details</a>
+    <button type="button" class="btn btn-default delete" href="#" title="delete">Delete</a>
+  </div>
+</div>
 
 
 <style>

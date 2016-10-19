@@ -1,0 +1,31 @@
+<div class="panel panel-default " ng-init="company.getAllCompanies()" >
+	<div class="panel-heading">
+		<h3 class="panel-title">Registered Vendors</h3>
+	</div>
+	<div class="panel-body">
+		<table class="table table-striped table-hover chome">
+			<thead>
+				<tr>
+					<th>Thumbnail</th>
+					<th>Name</th>
+					<th>Abrev</th>
+					<th>WeekendMax</th>
+					<th>Terms</th>
+					<th>URL</th>
+					<th>Store</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="each in company.companies">
+					<td><a href="/companydetail/{{each.id}}"> {{ each.image }} </a></td>
+					<td><a href="/companydetail/{{each.id}}"> {{ each.name }} </a></td>
+					<td><a href="/companydetail/{{each.id}}"> {{ each.abrev }} </a></td>
+					<td><a href="/companydetail/{{each.id}}"> {{ each.weekendmax }} </a></td>
+					<td><a href="/companydetail/{{each.id}}"> {{ each.terms }} </a></td>
+					<td><a href="/companydetail/{{each.id}}"> {{ each.url }} </a></td>
+					<td><a href="/companydetail/{{each.id}}"> {{ each.store }} </a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
