@@ -64,3 +64,15 @@
 // return api;
 
 // }
+/*
+Follow Up:
+----------
+
+01. https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js
+02. https://blog.nodejitsu.com/npmawesome-9-gulp-plugins/
+03. https://www.smashingmagazine.com/2014/06/building-with-gulp/
+04. http://engineroom.teamwork.com/10-things-to-know-about-gulp/
+05. https://css-tricks.com/gulp-for-beginners/
+
+06. https://sdarchitect.wordpress.com/2012/09/25/understanding-devops-part-2-continuous-integration-and-continuous-delivery/
+*/

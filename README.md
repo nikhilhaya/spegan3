@@ -64,8 +64,16 @@ FAQs:
 02. if browser doesn't render a page or renders incorrectly, kindly check angular is accessed properly, 
 	also if bower_components/angular can't fetch angular.js file, switch to CDN links to access all angular files, also provided in the code itself.
 
-03. always shutdown.bat before you try starting tomcat server again. there is a possibility that a tomcat instance is already 		running if you have tried starting it in near future.
+03. always shutdown.bat before you try starting tomcat server again. there is a possibility that a tomcat instance is already 			running if you have tried starting it in near future.
 	also change the port to any random port in jenkins.xml file because both tomcat and jenkins are trying to listen to port 8080 by default casuing port binding error.
+
+04. git push
+	git init
+	git add .
+	git commit -m "Initial commit"
+	git remote add origin <project url>
+	git push -f origin master
+	The -f option on git push forces the push. If you don't use it, you'll see an error like this:
 
 
 Issues:
@@ -122,15 +130,3 @@ Other Scripts:
 04. npm config set proxy http://10.74.91.103:80
 05. npm set registry http://registry.npmjs.org/
 06. npm install --save-dev can be abbreviated with npm i -D
-
-
-Follow Up:
-----------
-
-01. https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js
-02. https://blog.nodejitsu.com/npmawesome-9-gulp-plugins/
-03. https://www.smashingmagazine.com/2014/06/building-with-gulp/
-04. http://engineroom.teamwork.com/10-things-to-know-about-gulp/
-05. https://css-tricks.com/gulp-for-beginners/
-
-06. https://sdarchitect.wordpress.com/2012/09/25/understanding-devops-part-2-continuous-integration-and-continuous-delivery/
