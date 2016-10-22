@@ -7,22 +7,19 @@ angular.module('authService', [])
 
 				authFactory.login = function(username, password){
 					return $http.post('/api/login', {
-								username: username,
-								password: password
-							})
-							// success is a promise function
-							.success(function(data, status, headers, config){
-								AuthToken.setToken(data.token);
-								return data;
-							})
-							.error(function(data, status, headers, config){
-								throw new Error("Error from authService/ login Method");
-							});
-						};
+						username: username,
+						password: password
+					})
+					// success is a promise function
+					.success(function(data){
+						AuthToken.setToken(data.token);
+						return data;
+					})
+				}
 				
 				authFactory.logout = function(){
 					AuthToken.setToken();
-				};
+				}
 
 				authFactory.isLoggedIn = function(){
 					if(AuthToken.getToken())
@@ -31,14 +28,14 @@ angular.module('authService', [])
 						console.log("user not logged in, redirecting to login page");
 						return false;
 					}
-				};
+				}
 
 				authFactory.getUser = function(){
 					if(AuthToken.getToken())
 						return $http.get('/api/me');
 					else
 						return $q.reject({message: "User has no token"});
-				};
+				}
 		
 		return authFactory;
 	})
@@ -46,18 +43,18 @@ angular.module('authService', [])
 	// get token from browser
 	.factory('AuthToken', function($window){
 
-		var authTokenFactory = {};
+		var authTokenFactory = {}
 
 			authTokenFactory.getToken = function(){
 				return $window.localStorage.getItem('token');
-			};
+			}
 
 			authTokenFactory.setToken = function(token){
 				if(token)
 					$window.localStorage.setItem('token', token);
 				else
 					$window.localStorage.removeItem('token');
-			};
+			}
 
 		return authTokenFactory;
 	})
@@ -80,7 +77,7 @@ angular.module('authService', [])
 				if(response.status == 403 || response.status == 304)
 					$location.path('/login');
 				return $q.reject(response);
-			};
+			}
 
 		return interceptorFactory;
 	});

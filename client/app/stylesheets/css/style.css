@@ -7,6 +7,10 @@ body{
   background: #f2f2f2;
   /*border: 1px solid black;*/
   font-family: "Roboto", sans-serif;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+  max-width: 1349px;
+  margin: 1px !important;
+  margin-left: auto !important; 
+  margin-right: auto !important;
 }
 #main-wrapper{
   /*width: 960px;*/
@@ -21,123 +25,140 @@ body{
   height: 80px;
   background: #172130;
   /*background: 1px solid red;*/
-}
-.top{
   display: block;
+  overflow: visible;
 }
-.changeLoginLogout ul li a:hover, ul li a:focus, ul li a:visited {
-    background-color: #3bc696; 
-    color: white; !important;
-}
-.logo h3{
-  float: left;
-  width: 15%;
-  position: all;
-  color: white;
-  /*border: 1px solid red;*/
-}
-.logo h3 a:focus, h3 a:link, h3 a:visited, h3 a:active, h3 a:hover{
-  text-decoration: none;
-  color: white;
-}
+    .top .logo{
+      float: left;
+      width: 150px;
+      height: 80px;
+      display: inline;
+      /*max-width: 8%;*/
+      /*border: 1px solid red;*/
+    }
+        .logo img{          
+          color: white;
+          /*border: 1px solid red;*/
+        }
+        .logo img a:focus, h3 a:link, h3 a:visited, h3 a:active, h3 a:hover{
+          /*text-decoration: none;*/
+          /*color: white;*/
+        }
 
-.top h3{
-  margin: 0px;
-  padding-left: 15px;
-  text-decoration-style: none;
-  font-family: "Roboto";
-}
-.searchbar{
-  float: left;
-  width: 25%;
-  position: all;
-  margin-top: 20px;
-  border-radius: 5px;
-  margin-left: 10%;
-  height: 40px;
-  border-color: #111730;
-  font-family: "Roboto";
-}
-.searchbar {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.searchbar:focus {
-  color: white;
-  background: rgba(0, 0, 0, 0.1);
-  outline: 0;
-}
-.searchbar {
-  padding-left: 5px;
-  color: #bbb;
-  text-shadow: 1px 1px 1px black;
-  background: rgba(0, 0, 0, 0.16);
-  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
-}
-.newtop button{
-  background-color: #f44242;
-  border: none;
-  width: 12%;
-  margin-left: 1%;
-  float: left;
-  position: all;
-  margin-top: 20px;
-  border: 2px solid #f44242;
-  text: white;
-}
-.dropdown-menu li{
-  color: black;
-  text-decoration-style: none;
-  text-style: none;
-}
-.changeLoginLogout{
-  float: right;
-  margin-right: 3%;
-  padding-top: 1%;
-}
+    .search{
+      float: left;
+      margin-left: 10%;
+      width: 22%;
+      display: inline;
+    }
+        .searchbar{
+          float: left;
+          width: 100%;
+          margin-top: 20px;
+          border-radius: 5px;
+          height: 40px;
+          border-color: #111730;
+          font-family: "Roboto";
+        }
+        .searchbar {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+        .searchbar:focus {
+          color: white;
+          background: rgba(0, 0, 0, 0.1);
+          outline: 0;
+        }
+        .searchbar {
+          padding-left: 5px;
+          color: #bbb;
+          text-shadow: 1px 1px 1px black;
+          background: rgba(0, 0, 0, 0.16);
+          -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+          box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.06);
+        }
+            .search-icon{
+              /*display: inline-block;*/
+              /*width: 16px;*/
+              /*height: 16px;*/
+              position: relative;
+              left: 90%;
+              top: -30px;
+              color: #bbb;
+            }
+    .newtop{
+        float: left;
+        width: 12%;
+        margin-left: 1%;
+    }
+        .newtop button{
+          background-color: #f44242;
+          border: none;
+          border-radius: 5px;
+          border: 2px solid #f44242;
+          text: white;
+          width: 100%;
+          margin-top: 20px;
+        }   
+        .newdrop li a{
+            text-decoration: none;
+        }
+    .changeLoginLogout{
+      float: right;
+      margin-right: 2.5%;
+      margin-top: 1%;
+    }
+    .changeLoginLogout .navbar-nav>li>a {
+        padding-top: auto;
+        padding-bottom: auto;
+    }
+    .changeLoginLogout ul li a:hover, ul li a:focus, ul li a:visited, ul li a:active {
+        background-color: #3bc696; 
+    }
+    .changeLoginLogout ul li a{
+        color: white; !important;
+    }
 .middle{
-  display: table;
-  width: 100%;
+  display: block;
+  /*width: 100%;*/
+  /*border: 1px solid orange;*/
+  height: auto;
+  overflow: visible;
+  display: flex;    /* equal height of the children */
+}
+/*.navbar-side, .mainContent {*/
+  /*display: table-cell;*/
   /*height: auto;*/
-}
-.navbar-side, .mainContent {
-  display: table-cell;
-  /*height: auto;*/
-}
-#main-content{
-  background: #f2f2f2;
-  float:right;
-  width: 92%;
-  min-height: 100%;
-  /*border: 1px solid green;*/
-  padding-top: 3px;
-  margin-left: 0px;
-}
-.mainContent  ul{list-style: none;}
+/*}*/
 .aside{
-  width: 8%;
+  width: 9%;
   float: left;
-  text-align: center;
   /*border: 1px solid green;*/
+  display: inline;
+  /*overflow: hidden;*/
 }
-
     .aside ol {
       margin: 0;
       padding: 0;
       list-style: none;
-      width: 150px;
       text-decoration-style: none;
+      /*border: 1px solid yellow;*/
     }
     .aside ol li {
         position: relative;
         background-color: #172130;
-        padding: 12px;
+        padding-top: 10px; padding-bottom: 10px;
         color: white;
         border-top: 1px solid #bdc3c7;
         border-right: 8px solid #3bc696;
         list-style-type:none;
+        /*white-space:nowrap;*/
+        text-align: center;
+        min-width: 125px;
+    }
+    .aside ol li span{
+      /*margin-right: 5%;*/
     }
     .aside ol li:hover{
       background-color: #3bc696;
@@ -145,47 +166,74 @@ body{
     }
     .aside li ol {
       position: absolute;
-      left: 108%;
+      left: 107%;
       top: 0;
       display: none;
-      width: 150%;
+      width: 120%;
     }
 
     .aside ol li a {
       text-decoration: none;
       color: white;
-      padding: 5px;
+      /*padding: 5px;*/
       border-bottom: 0;
+      display: block;
     }
     .aside ol li a:focus,ol li a:link,ol li a:visited,ol li a:active,ol li a:hover {
         color: white;
         text-decoration: none;
+        display: block;
     }
 
     .aside ol li a:hover{
       color: white;
       text-decoration: none;
+      display: block;
     }
-    .aside ol {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      width: 98%;
-      border-bottom: 1px solid #ccc;
-    }
+
     .aside li:hover ol { display: block; }
 
-/*.chome a:hover, ul li a:focus, a:link, a:visited, a:active {
-        background-color: #3bc696 !important;
-        color: #97b8ed;
-        text-decoration: none;
-    }*/
-
-.chome td a:focus, td a:link, td a:visited, td a:active, td a:hover{
-  text-decoration: none;
-  color: black;
+.mainContent{
+  background: #f2f2f2;
+  float:left;
+  width: 91%;
+  min-height: 100%;
+  /*border: 1px solid blue;*/
+  /*padding-left: 3px;*/
+  /*margin-left: 0px;*/
+  display: inline;
 }
+    .mainContent  ul{list-style: none;}
+    /*.chome a:hover, ul li a:focus, a:link, a:visited, a:active {
+            background-color: #3bc696 !important;
+            color: #97b8ed;
+            text-decoration: none;
+        }*/
 
+        /*home page*/
+ 
+        .container-fluid{
+            padding-right: 5px !important;
+            padding-left: 10px !important;
+        }
+
+        .home{
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+        .home h4{text-decoration: underline;}
+        .home ul{list-style: none;}
+
+            .chtable td a:focus, td a:link, td a:visited, td a:active, td a:hover{
+              text-decoration: none;
+              color: black;
+            }
+            .chtable>tbody>tr>td, .chtable>tbody>tr>th, .chtable>tfoot>tr>td, .chtable>tfoot>tr>th {
+                padding: 15px !important;
+            }
+            .chtable>thead>tr>td, .chtable>thead>tr>th {
+              /*text-align: center !important;*/
+}
 footer{
   clear: both;
   background: #172130;

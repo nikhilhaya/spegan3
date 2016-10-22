@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<!-- <link rel="stylesheet" href="app/stylesheets/css/style.css"> -->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet' type='text/css'>
 
 </head>
 <body ng-controller="MainController as main">
@@ -28,38 +29,42 @@
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
 
 		<!-- Bower Scripts --><!--
-		<script type="text/javascript" src="../../../bower_components/jquery/dist/jquery.js"></script>
-		<script type="text/javascript" src="../../../bower_components/angular/angular.js"></script>
-		<script type="text/javascript" src="../../../bower_components/angular-route/angular-route.js"></script>
-		<script type="text/javascript" src="../../../bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
+		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.js"></script> -->
 		
-		<script type="text/javascript" src="app/services/authService.js"></script>
-		<script type="text/javascript" src="app/services/userService.js"></script>
-		<script type="text/javascript" src="app/services/companyService.js"></script>
-
-		<script type="text/javascript" src="app/controllers/mainController.js"></script>
-		<script type="text/javascript" src="app/controllers/userController.js"></script>
-		<script type="text/javascript" src="app/controllers/companyController.js"></script>
-
-		<script type="text/javascript" src="app/app.routes.js"></script>
 		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" src="app/app.routes.js"></script>
+
+		<script type="text/javascript" src="app/services/authservice.js"></script>
+		<script type="text/javascript" src="app/services/userservice.js"></script>
+		<script type="text/javascript" src="app/services/companyservice.js"></script>
+
+		<script type="text/javascript" src="app/controllers/maincontroller.js"></script>
+		<script type="text/javascript" src="app/controllers/usercontroller.js"></script>
+		<script type="text/javascript" src="app/controllers/companycontroller.js"></script>
 
 	<div id="main-wrapper">
 		
 		<header class="top">
 			<div class="logo">
-				<!-- <img src="./4041.jpeg" ng-if="main.loggedIn"> -->
-				<h3 ng-if="main.loggedIn"><a href="/" title="logo">Club Demonstration Services</a></h3>
-				<h3 ng-if="!main.loggedIn">Club Demonstration Services</h3>
+				<img ng-if="main.loggedIn" ng-src="/public/images/daymonlogo.png" alt="CLUB DEMON LOGO">
+					<!-- <a href="/" title="logo"> -->
+					<!-- <img src="public/images/daymonlogo.jpeg"> -->
+					<!-- </a> -->
+				
+				<!-- <img ng-if="!main.loggedIn" src="../../../public/images/daymonlogo.jpeg"> -->
 			</div>
 			<div ng-if="main.loggedIn" class="search">
 				<input type="text" placeholder="search website..." id="searchbar" class="searchbar">
+				<i class="fa fa-search search-icon"></i>
 			</div>
 			<div ng-if="main.loggedIn" class="newtop dropdown">
 				<button type="button" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Create New &nbsp;&nbsp;&nbsp;
 				<span class="caret"></span>
 				</button>
-    				<ul class="dropdown-menu">
+    				<ul class="dropdown-menu newdrop">
       					<li><a href="#">Customer Request</a></li>
       					<li><a href="/companycreate">Vendors</a></li>
       					<li><a href="#">Items</a></li>
@@ -86,38 +91,77 @@
 
 	<div class="middle">
 
-		<section id="main-content" class="mainContent">
-			<main class="container-fluid">
+		<div class="aside">
+ 			<div  ng-if="main.loggedIn" class="nav navbar-nav navbar-side">
+				<ol> 
+				  
+				  <li><a href="/">
+				  	<div class="glyphicon glyphicon-th-large" aria-hidden="true"></div>
+				  	<div>Dashboard</div>
+				  </a></li> 
+				  
+				  <li><a href="#">
+				  	<div class="glyphicon glyphicon-calendar" aria-hidden="true"></div>
+				  	<div>Scheduling</div>
+				  </a></li>
+
+				  <li><a href="#">
+				  	<div class="glyphicon glyphicon-bell" aria-hidden="true"></div>
+				  	<div>Customer Req</div>
+				  </a></li>
+				  
+				  <li><a href="/companyhome">
+				  	<div class="glyphicon glyphicon-briefcase" aria-hidden="true"></div>
+				  	<div>Business Orgs</div></a>
+				    	<ol> 
+				    		<li><a href="#"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>Search Org</a></li> 
+				      		<li><a href="/companycreate"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Add Org</a></li> 
+				      		<li><a href="#"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>Update Org</a></li>
+				      		<li><a href="#"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete Org</a></li>  
+				      	</ol> 
+				  </li> 
+				  
+				  <li><a href="#">
+				  	<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+				  	<div>Items</div>
+				  </a> </li>
+
+				  <li><a href="#">
+				  	<span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
+				  	<div>Contacts</div>
+				  </a> </li>
+
+				  <li><a href="#">
+				  	<span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
+				  	<div>Assets</div>
+				  </a> </li>
+
+				  <li><a href="#">
+				  	<span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+				  	<div>Resources</div>
+				  </a> </li>
+
+				  <li><a href="#">
+				  	<span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+				  	<div>Location</div>
+				  </a> </li>
+
+				  <li><a href="#">
+				  	<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+				  	<div>Services</div>
+				  </a> </li>
+				  
+				</ol>
+			</div>
+		</div>
+
+		<div id="main-content" class="mainContent">
+ 			<main class="container-fluid">
 				<div ng-view>
 					{{2+2}}
 				</div>
 			</main>
-		</section>
-
-		<aside class="aside">
-			<div  ng-if="main.loggedIn" class="nav navbar-nav navbar-side">
-				<ol> 
-				  <li><a href="/"><i class="material-icons">dashboard</i><br />Dashboard</a></li> 
-				  <li><a href="#"><i class="material-icons">restore</i><br />Scheduling</a></li>
-				  <!-- <li><a href="#"><i class="material-icons">receipt</i><br />Customer Request</a></li> -->
-				  <li><a href="/companyhome"><i class="material-icons">work</i><br />Vendors</a>
-				      <ol> 
-				      <li><a href="#"><i class="material-icons">search</i><br />Search Vendor</a></li> 
-				      <li><a href="/companycreate"><i class="material-icons">note_add</i><br />Add Vendor</a></li> 
-				      <li><a href="#"><i class="material-icons">mode_edit</i><br />Update Vendor</a></li>
-				      <li><a href="#"><i class="material-icons">delete</i><br />Delete Vendor</a></li>  
-				      </ol> 
-				    </li> 
-				  <li><a href="#"><i class="material-icons">assignment</i><br />Items</a> </li>
-				  <li><a href="#"><i class="material-icons">contacts</i><br />Contacts</a></li>
-				  <li><a href="#"><i class="material-icons">group_work</i><br />Assets</a></li>
-				  <li><a href="#"><i class="material-icons">supervisor_account</i><br />Resources</a></li>
-				  <li><a href="#"><i class="material-icons">language</i><br />Location</a></li>
-				  <li><a href="#"><i class="material-icons">business</i><br />Services</a></li> 
-				</ol>
-			</div>
-		</aside>
-
+		</div>
 	</div>
 
 

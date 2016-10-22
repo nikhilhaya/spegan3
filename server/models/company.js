@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
 
   sequelize
     .sync({
-      // force: true,
+      force: false,
       // logging: console.log
     })
     .then(function(){

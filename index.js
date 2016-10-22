@@ -7,6 +7,7 @@ module.exports = function(){
 	var cookieParser = require('cookie-parser');
 	var bodyParser = require('body-parser');
 	var session = require('express-session');
+	var passport = require('passport');
 	var LocalStrategy = require('passport-local').Strategy;
 	var expressValidator = require('express-validator');
 
@@ -30,9 +31,9 @@ module.exports = function(){
 		
 		app.use(expressValidator({
 		  errorFormatter: function(param, msg, value) {
-		      var namespace = param.split('.'),
-		      	  root    = namespace.shift(),
-		      	  formParam = root;
+		      var namespace = param.split('.')
+		      , root    = namespace.shift()
+		      , formParam = root;
 
 		    while(namespace.length) {
 		      formParam += '[' + namespace.shift() + ']';
@@ -51,7 +52,7 @@ module.exports = function(){
 			res.locals.error_msg = req.flash('error_msg');
 			res.locals.error = req.flash('error');
 			next();
-		});
+		})
 
 		models.sequelize
 		  .authenticate()
@@ -75,7 +76,7 @@ module.exports = function(){
 
 		  		app.get('*', function(req, res){
 		  			res.sendFile(__dirname + '/client/app/views/index.html');
-		  		});
+		  		})
 
 	// app.set('port', process.env.PORT || 3000);
 	// app.listen(app.get('port'), function () {
@@ -83,4 +84,4 @@ module.exports = function(){
 	// });
 
 return app;
-};
+}

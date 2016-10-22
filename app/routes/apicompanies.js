@@ -46,35 +46,33 @@ module.exports = function(app, express) {
 		    });
     });
 
-    api.put('/companyupdate/:id', function(req, res){
-		    Company.update(req.body, {
-		      where: {
-		        id: req.params.id
-		      }
-		    })
-		    .then(function (updatedRecords) {
-		      res.status(200).json(updatedRecords);
-		    })
-		    .catch(function (error){
-		      res.status(404).json(error);
-		    });
-		  // }
-	});
+ //    api.put('/companyupdate/:id', function(req, res){
+	// 	    Company.update(req.body, {
+	// 	      where: {
+	// 	        id: req.params.id
+	// 	      }
+	// 	    })
+	// 	    .then(function (updatedRecords) {
+	// 	      res.status(200).json(updatedRecords);
+	// 	    })
+	// 	    .catch(function (error){
+	// 	      res.status(404).json(error);
+	// 	    });
+	// });
 
-	api.delete('/companydelete/:id', function(req,res){
-		    Company.destroy({
-		      where: {
-		        id: req.params.id
-		      }
-		    })
-		    .then(function (deletedRecords) {
-		      res.status(200).json(deletedRecords);
-		    })
-		    .catch(function (error){
-		      res.status(404).json(error);
-		    });
-		  // };
-	});
+	// api.delete('/companydelete/:id', function(req,res){
+	// 	    Company.destroy({
+	// 	      where: {
+	// 	        id: req.params.id
+	// 	      }
+	// 	    })
+	// 	    .then(function (deletedRecords) {
+	// 	      res.status(200).json(deletedRecords);
+	// 	    })
+	// 	    .catch(function (error){
+	// 	      res.status(404).json(error);
+	// 	    });
+	// });
 
 
 return api;

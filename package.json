@@ -4,7 +4,6 @@
   "description": "daemon poc",
   "main": "server.js",
   "scripts": {
-     "start": "start http://localhost:3000 & node server",
     "test": [
       "./node_modules/.bin/mocha --reporter spec",
       "./node_modules/karma/bin/karma start karma.conf.js"
@@ -27,8 +26,10 @@
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.0",
     "gulp-changed": "^1.3.2",
+    "gulp-clean": "^0.3.2",
     "gulp-coffee": "^2.3.2",
     "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
     "gulp-imagemin": "^3.0.3",
     "gulp-istanbul": "^1.1.1",
     "gulp-jshint": "^2.0.1",
@@ -36,12 +37,14 @@
     "gulp-load-plugins": "^1.3.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-mocha": "^3.0.1",
+    "gulp-ng-annotate": "^2.0.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1",
     "istanbul": "^0.4.5",
     "jasmine-core": "^2.5.2",
     "jshint": "^2.9.3",
