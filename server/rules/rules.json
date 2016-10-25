@@ -1,0 +1,31 @@
+{
+	"physical-product":[
+		{
+			"criteria":"physical product",
+			"action": "generate a packing slip for shipping and generate a commission payment to the agent"
+		}],
+	"book":[
+		{
+			"criteria": "book",
+			"action": 	"create a duplicate packing slip for the royalty department and generate a commission payment to the agent"
+		}],
+	"membership":[
+		{
+			"criteria": "membership",
+			"action": "activate that membership and e-mail the owner and inform them of the activation"
+		}],
+	"upgrade":[
+		{
+			"criteria": "upgrade",
+			"action": "apply the upgrade and e-mail the owner and inform them of the upgrade"
+		}],
+	"video":[
+		{
+			"criteria": "video",
+			"action": [
+				{
+					"title" : "Learning to Ski",
+					"action" : "add a free “First Aid” video to the packing slip (the result of a court decision in 1997"
+				}]
+		}]
+}

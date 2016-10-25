@@ -1,4 +1,4 @@
-# DaymonCDS POC
+# Daymon POC
 
 Project Run:
 ------------
@@ -130,3 +130,30 @@ Other Scripts:
 04. npm config set proxy http://10.74.91.103:80
 05. npm set registry http://registry.npmjs.org/
 06. npm install --save-dev can be abbreviated with npm i -D
+
+Jenkins CICD Setup:
+
+01. Of course, you could just change all your "Execute shell" build steps to "Execute Windows batch command" in all your jobs as 		suggested by @funkybro. This doesn't solve your problem if you have a job that could run on either a Windows system or Linux and 	 you have both systems for other reasons. 
+	Or, you could change this setting to use cmd.exe as suggested by @ajith: 
+	Manage Jenkins -> Configure System -> Shell -> Shell executable = C:\Windows\system32\cmd.exe
+	But, I like having linux commands and using something that more closely resembles Bash. It's my own preference but I thought this might also be helpful. To start from the beginning, I used Chocolatey NuGet to install Git. I also recommend GnuWin to give you some of the very helpful Unix commands.
+	- Install Chocolatey NuGet
+	- In CMD or PowerShell: cinst gnuwin git
+	Then you can fix this using the Windows UI by adding C:\Program Files (x86)\Git\bin\ to the system path.
+	Or you can fix it in Jenkins global config: Manage Jenkins -> Configure System -> Shell -> Shell executable = C:\Program Files (x86)\Git\bin\sh.exe
+
+02. Manage Jenkins-->Configure System-->Global Properties:
+	name: NODE_PATH
+	value: %AppData%\npm\node_modules
+
+03. Project >> Build 
+	- Execute Shell
+		echo path
+		node --version
+		npm install
+		bower install
+		gulp clean
+	- Execute NodeJs Script
+		var sys = require('sys');
+		sys.puts('buildnumber:' + process.env[BUILD_NUMBER]);
+		sys.puts('current directory:' + process.cwd());

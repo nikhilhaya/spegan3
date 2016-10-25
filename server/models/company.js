@@ -41,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       // logging: console.log
     })
     .then(function(){
-      console.log("Company Model Synced")
+      // console.log("Company Model Synced")
     })
     .catch(function(error){
       console.log(error);

@@ -45,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
       // logging: console.log
     })
     .then(function(){
-      console.log("User Model Synced")
+      // console.log("User Model Synced")
     })
     .catch(function(error){
       console.log(error);
