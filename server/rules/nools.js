@@ -10,11 +10,28 @@ module.exports = function(){
 		// ("asserting facts" in RETE rule engine)
 		var Timings = flow.getDefined("LoginLogoutTimings");
 
-				date1 = moment();
-				time1 = moment("2013-02-08 09:30:26", ["DD-MM-YYYY"]);
+				date1 = moment(),
+				time1 = moment("2013-02-08 09:30:26", ["MM-DD-YYYY", "DD-MM-YYYY"]);
 
 			var t1 = new Timings(2, 10, "female");
 			var t2 = new Timings(7, 10, "male");
+
+			var time = moment();
+			var baseTime  = moment('2016-10-26 00:00:01');
+			var lateTime = moment('2016-10-26 20:00:00');
+			var loginTime = moment('2016-10-26 09:15:30');
+			var logoutTime = moment('2016-10-26 21:20:10');
+			// time.subtract(4, 'hours');
+			// time.add(5, 'hours');
+
+			console.log("current time: " + time.format('DD-MM-YYYY HH:mm:ss'));
+			console.log("base time: " + baseTime.format('DD-MM-YYYY HH:mm:ss'));
+			console.log("login time: " + loginTime.format('DD-MM-YYYY HH:mm:ss'));
+			console.log("logout time: " + logoutTime.format('DD-MM-YYYY HH:mm:ss'));
+			console.log("time logged in: " + logoutTime.diff(loginTime, 'hours', true));
+			if(logoutTime.isAfter(lateTime)){
+				console.log("employee is " + logoutTime.diff(lateTime, 'hours', true) + " late");
+			}
 
 			nsession.assert(t1);
 			nsession.assert(t2);
@@ -47,52 +64,3 @@ module.exports = function(){
 
 	return nools;
 };
-
-
-// var t1 = moment();
-// var t2 = moment();
-// console.log(t1.format());
-// // var t3 = t2.hours() - t1.hours();
-// var t4 = moment();
-// console.log(t4.startOf('day'));
-// var a = moment([2007, 0, 28]);
-// var b = moment([2007, 0, 29]);
-// var c = moment([2013-02-08 09:30:26]);
-// console.log(a.from(b)); // "a day ago"
-// moment().toNow();
-// moment().toNow(Boolean);
-// moment([2007, 0, 29]).toNow();     // in 4 years
-// moment([2007, 0, 29]).toNow(true);
-
-// var loginTime = moment('2016-10-25 10:15:20:12');
-// var logoutTime = moment('2016-10-25 21:20:20:12');
-// console.log(logoutTime.from(loginTime));
-
-
-// var dnow = moment();
-// 	console.log(dnow);
-// var snow = dnow.minute() % 15;
-//     console.log(snow);
-// var diffnow = 15 - snow;
-// 	console.log(diffnow);
-// var tonow = moment(dnow).add(diffnow, 'minute');
-// 	console.log(tonow);
-// var ahead30now = moment(tonow).add(30, 'minute');
-// 	console.log(ahead30now);
-
-// if (d > ahead30now) {
-//     // allow input time
-//     console.log('UTC TIME DB', d.format());
-// } else {
-
-// }
-
-// var now  = "04-09-2013 15:00:00Z";
-// var then = "02/09/2013 14:20:30";
-
-// var ms = moment(now,"DD/MM/YYYY HH:mm:ss").diff(moment(then,"DD/MM/YYYY HH:mm:ss"));
-// 	console.log(ms);
-// var d = moment.duration(ms);
-// 	console.log(d);
-// var s = Math.floor(d.asHours()) + moment.utc(ms).format(":mm:ss");
-// 	console.log(s);
